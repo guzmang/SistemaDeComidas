@@ -1,0 +1,8 @@
+Utilizamos primero a ObserverBusqueda como clase abstracta,
+ya que decidimos combinarlo con un Template, porque todos los monitores
+cumplen la misma estructura: si cumple un criterio hace tal cosa,
+sino hace otra. Algunos no tienen criterio entonces
+por ejemplo el valor por defecto de doCumple es true. 
+Esto permite que sea más mantenible al querer modificar algún criterio
+o quitarlo.
+

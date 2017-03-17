@@ -1,0 +1,19 @@
+Resumen de cambios realizados sobre el diseño anterior / decisiones tomadas:
+
+- Creamos una clase abstracta componenteReceta que implementa la interface Receta (como antes)
+así podíamos mapearlo. Lo resolvimos con Single_table ya que comparten todos los atributos
+excepto uno, que es la tenencia de subrecetas que para las recetas Simple sería un campo en null.
+
+- Los productos pasan a ser embeddable porque no tiene sentido modelarlos ya que no nos 
+importa su entidad y no son mutables, nos importa el conjunto de atributos. 
+
+- Se convirtio el boolean de sexo en un enum, y ahora pasa a ser enumerated :)
+
+- Se crea una clase abstracta Condicion para poder mapear la interface que implementaban. 
+Se resuelve con single table ya que no tienen demasiados atributos directamente. 
+
+- LoggerMayor100 no extiende de ObserverBusqueda porque no queremos persistir sus atributos.
+
+- No interesa persistir las busquedas porque son momentaneas, en cambio sí las estadísticas que
+llevan los observers, que no son búsquedas, son recetas y usuarios. 
+

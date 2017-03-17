@@ -1,0 +1,29 @@
+{{#partial "titulo" }}
+    <title>Supercook</title>
+{{/partial}}
+
+{{#partial "contenido" }}
+    <div class="row">
+        <div class="col-md-12">
+            {{#if recetas}}
+                <table class="table table-striped" >
+                    <tr>
+                        <th>Receta</th>
+                        <th>Calorias</th>
+                    </tr>
+                    {{#each recetas}}
+                        <tr>
+                            <td>{{nombre}}</td>
+                            <td>{{calorias}}</td>
+                        </tr>
+                    {{/each}}
+                </table>
+            {{else}}
+                <h1>No hay recetas</h1>
+            {{/if}}
+
+        </div>
+    </div>
+{{/partial}}
+
+{{> layout.hbs }}

@@ -1,0 +1,24 @@
+Prosa Recetas-Subrecetas
+Utilizamos composite para hacer las recetas y subrecetas porque 
+al momento del usuario tener que agregar recetas a su colección, al mismo
+sólo le tiene que interesar si es una receta, no si está compuesta por otras.
+Por ejemplo: el usuario quiere agregar una receta de Milanesas con Pure,
+el mismo quiere agregarla a su lista de recetas propias. Y vemos que la misma
+está compuesta por milanesas y por puré, pero al usuario no le importa cómo
+se compone, sino que en sí forma una sola receta que es "Milanesas con Pure"
+no quiere el puré solo ni la milanesa sola, quiere el conjunto y para él
+eso es una receta.
+De esta forma es mucho más simple porque sólo tiene un conjunto de recetas,
+que está formado por todas las clases (RecetaCompuesta y RecetaSimple)
+que implementan la interface Receta. 
+
+De todas formas hay cosas que no sabemos cómo se calculan, pero eso es parte
+del dominio (cosas que faltan especificar), por ejemplo que no sabemos
+cuándo una receta que es compuesta es dificil o de qué temporada es,
+si está compuesta por una receta fácil y otra difícil el dominio no me dice
+cómo tomar esa decisión. Por lo tanto esas cosas sólo son parte de 
+una receta simple. 
+
+Por otra parte, cuando por ejemplo se pide la subreceta de una receta que 
+es simple, para que justamente sea polimórfico para el usuario, devuelve
+una colección que contiene sólo a ella misma.
